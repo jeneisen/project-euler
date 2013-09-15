@@ -5,3 +5,14 @@
 # 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
+require_relative 'fibonacci'
+
+i = 1
+sum = 0
+while Fibonacci.fib(i) < 4000000
+  sum += Fibonacci.fib(i) if Fibonacci.fib(i).even?
+  i += 1
+end
+
+puts sum
+
